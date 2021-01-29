@@ -30,6 +30,9 @@ require('./hardware.component.scss');
 const hardwareComponent = require('./hardware.component.ejs');
 const breadcrumbComponent = require('../../job/breadcrumb/breadcrumb.component.ejs');
 const webportalConfig = require('../../config/webportal.config.js');
+
+const sommelierConfig = require('../../sommelier-constants-node.js');
+
 //
 let table = null;
 
@@ -433,6 +436,7 @@ const loadData = () => {
         breadcrumb: breadcrumbComponent,
         grafanaUri: webportalConfig.grafanaUri,
         machineMetaData: data,
+	ipMap: sommelierConfig.SOMMELIER_IPMAP,
       });
       $('#content-wrapper').html(hardwareHtml);
       table = $('#hardware-table')

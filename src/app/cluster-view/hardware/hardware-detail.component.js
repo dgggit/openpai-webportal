@@ -27,6 +27,8 @@ const breadcrumbComponent = require('../../job/breadcrumb/breadcrumb.component.e
 const webportalConfig = require('../../config/webportal.config.js');
 const querystring = require('querystring');
 
+const sommelierConfig = require('../../sommelier-constants-node.js');
+
 $(document).ready(() => {
   let instance = '';
   const query = querystring.parse(window.location.search.replace(/^\?+/, ''));
@@ -39,6 +41,7 @@ $(document).ready(() => {
     breadcrumb: breadcrumbComponent,
     grafanaUri: webportalConfig.grafanaUri,
     instance: instance,
+    ipMap: sommelierConfig.SOMMELIER_IPMAP,
   });
   $('#content-wrapper').html(hardwareDetailHtml);
 });

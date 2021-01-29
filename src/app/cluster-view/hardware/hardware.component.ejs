@@ -11,7 +11,8 @@ const idPrefixes = ["cpu", "mem", "gpu", "gpumem", "disk", "eth"];
     <table id='hardware-table' class='table table-bordered table-hover table-condensed' style='vertical-align:middle'>
       <thead>
         <tr>
-          <th>IP Address</th>
+          <th>Internal IP</th>
+          <th>External IP</th>
           <th>Machine Name</th>
 <%
           for (let i = 0; i < metricNames.length; i++) {
@@ -33,6 +34,7 @@ const idPrefixes = ["cpu", "mem", "gpu", "gpumem", "disk", "eth"];
 %>
           <tr>
             <td><a href='<%= nodeViewUrl %>'><%= ipAddress %></a></td>
+            <td><a href='<%= nodeViewUrl %>'><%= ipMap[ipAddress] %></a></td>
             <td><%= machineName %></td>
 <%
             for (let j = 0; j < idPrefixes.length; j++) {

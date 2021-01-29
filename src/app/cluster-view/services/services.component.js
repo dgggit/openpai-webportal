@@ -27,6 +27,9 @@ const serviceTableComponent = require('./service-table.component.ejs');
 const serviceViewComponent = require('./services.component.ejs');
 const loading = require('../../job/loading/loading.component');
 const webportalConfig = require('../../config/webportal.config.js');
+
+const sommelierConfig = require('../../sommelier-constants-node.js');
+
 require('bootstrap');
 require('admin-lte/dist/css/AdminLTE.min.css');
 require('bootstrap/dist/css/bootstrap.css');
@@ -53,8 +56,9 @@ const loadServices = () => {
         data,
         k8sUri: webportalConfig.k8sDashboardUri,
         grafanaUri: webportalConfig.grafanaUri,
-        exporterPort: webportalConfig.exporterPort,
+	ipMap: sommelierConfig.SOMMELIER_IPMAP,
       }),
+
     );
     $('#service-datatable')
       .dataTable({

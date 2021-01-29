@@ -1,7 +1,8 @@
 <table id="service-datatable" class="table table-bordered table-hover" style="vertical-align:middle">
   <thead>
     <tr>
-      <th>IP Address</th>
+      <th>Internal IP</th>
+      <th>External IP</th>
       <th>Node Name</th>
       <th>PAI Roles</th>
       <th>Services</th>
@@ -19,6 +20,12 @@
           const internalIP = addresses.find(addr => addr.type === "InternalIP")
 %>
           <a href="hardware/detail.html?instance=<%= internalIP.address %>"><%= internalIP.address %></a>
+        </td>
+        <td>
+<%
+          const internalIP2 = addresses.find(addr => addr.type === "InternalIP")
+%>
+          <a href="hardware/detail.html?instance=<%= internalIP2.address %>"><%= ipMap[internalIP2.address]  %></a>         
         </td>
         <td><%= node.name %></td>
         <td>   
