@@ -237,11 +237,7 @@ const Sidebar = ({ className, style }) => {
               },
               {
                 name: `Feedback (version ${versionTag})`,
-                url: `https://github.com/Microsoft/pai/issues/new?${qs.stringify(
-                  {
-                    title: `Feedback ${window.PAI_VERSION}`,
-                  },
-                )}`,
+                url: `https://postechdblab.slack.com/archives/C01L8EDHLJV`,
                 key: KEY_FEEDBACK,
                 icon: 'Feedback',
                 target: '_blank',

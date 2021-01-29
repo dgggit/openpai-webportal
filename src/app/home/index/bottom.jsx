@@ -54,7 +54,7 @@ const Bottom = () => (
       <Link
         href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html'
         target='_blank'
-        style={{ fontWeight: FontWeights.semibold }}
+        style={{ color: '#812a6a', fontWeight: FontWeights.semibold }}
       >
         Learn more &gt;
       </Link>
@@ -92,7 +92,7 @@ const Bottom = () => (
       <Link
         href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html#learn-the-hello-world-job'
         target='_blank'
-        style={{ fontWeight: FontWeights.semibold }}
+        style={{ color: '#812a6a', fontWeight: FontWeights.semibold }}
       >
         Learn more &gt;
       </Link>
@@ -129,7 +129,7 @@ const Bottom = () => (
       <Link
         href='https://github.com/Microsoft/openpaivscode/blob/master/VSCodeExt.md'
         target='_blank'
-        style={{ fontWeight: FontWeights.semibold }}
+        style={{ color: '#812a6a', fontWeight: FontWeights.semibold }}
       >
         Learn more &gt;
       </Link>

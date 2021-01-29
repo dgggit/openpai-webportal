@@ -35,7 +35,7 @@ const Jumbotron = ({ showLoginModal }) => (
         <SignInBackground style={{ maxWidth: '20rem' }} />
         <div className={c(t.flex, t.flexColumn, t.itemsCenter)}>
           <div className={c(FontClassNames.superLarge, t.pt3)}>
-            Platform for AI
+            Sommelier
           </div>
           <div
             className={c(FontClassNames.mediumPlus, t.tc, t.lhCopy, t.mv4)}
@@ -47,7 +47,7 @@ const Jumbotron = ({ showLoginModal }) => (
             various scale.
           </div>
           <PrimaryButton
-            styles={{ root: { maxWidth: '6rem' } }}
+            styles={{ background: '#812a6a',  root: { maxWidth: '6rem' } }}
             text='Sign in'
             onClick={showLoginModal}
           />
@@ -64,7 +64,7 @@ const Jumbotron = ({ showLoginModal }) => (
           className={c(t.flex, t.flexColumn, t.pr4)}
           style={{ minWidth: '20rem' }}
         >
-          <div className={c(FontClassNames.superLarge)}>Platform for AI</div>
+          <div className={c(FontClassNames.superLarge)}>Sommelier</div>
           <div className={c(FontClassNames.mediumPlus, t.lhCopy, t.mv4)}>
             Platform for AI is an open source platform that provides complete AI
             model training and resource management capabilities, it is easy to
@@ -72,7 +72,7 @@ const Jumbotron = ({ showLoginModal }) => (
             various scale.
           </div>
           <PrimaryButton
-            styles={{ root: { maxWidth: '6rem' } }}
+            styles={{ background: '#812a6a',  root: { maxWidth: '6rem' } }}
             text='Sign in'
             onClick={showLoginModal}
           />
