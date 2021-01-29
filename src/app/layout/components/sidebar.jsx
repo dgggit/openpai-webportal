@@ -21,10 +21,10 @@ const KEY_FEEDBACK = 'FEEDBACK';
 // admin menu
 const KEY_ADMIN = 'ADMIN_MENU';
 const KEY_ADMIN_PREFIX = 'ADMIN:';
+const KEY_DASHBOARD = 'DASHBOARD';
+const KEY_SERVICES = 'SERVICES';
+const KEY_HARDWARE = 'HARDWARE';
 // admin menu items
-const KEY_DASHBOARD = KEY_ADMIN_PREFIX + 'DASHBOARD';
-const KEY_SERVICES = KEY_ADMIN_PREFIX + 'SERVICES';
-const KEY_HARDWARE = KEY_ADMIN_PREFIX + 'HARDWARE';
 const KEY_K8S_DASHBOARD = KEY_ADMIN_PREFIX + 'K8S_DASHBOARD';
 const KEY_USER_MANAGEMENT = KEY_ADMIN_PREFIX + 'USER_MANAGEMENT';
 // plugin menu
@@ -188,6 +188,24 @@ const Sidebar = ({ className, style }) => {
                 },
                 key: KEY_VC,
               },
+	      {
+	        name: 'Dashboard',
+	        url: '/dashboard.html',
+		icon: 'SpeedHigh',
+		key: KEY_DASHBOARD
+	      },
+	      {
+	        name: 'Services',
+	        url: '/cluster-view/services.html',
+	        icon: 'MapLayers',
+	        key: KEY_SERVICES,
+	      },
+	      {
+		name: 'Hardware',
+		url: '/cluster-view/hardware.html',
+		icon: 'HardDriveGroup',
+	        key: KEY_HARDWARE
+	      },
               {
                 name: 'Administration',
                 isExpanded: administrationExpanded,
@@ -199,24 +217,6 @@ const Sidebar = ({ className, style }) => {
                   display: isAdmin ? undefined : 'none',
                 },
                 links: [
-                  {
-                    name: 'Dashboard',
-                    url: '/dashboard.html',
-                    icon: 'SpeedHigh',
-                    key: KEY_DASHBOARD,
-                  },
-                  {
-                    name: 'Services',
-                    url: '/cluster-view/services.html',
-                    key: KEY_SERVICES,
-                    icon: 'MapLayers',
-                  },
-                  {
-                    name: 'Hardware',
-                    url: '/cluster-view/hardware.html',
-                    key: KEY_HARDWARE,
-                    icon: 'HardDriveGroup',
-                  },
                   {
                     name: 'K8s Dashboard',
                     url: '/cluster-view/k8s.html',
@@ -236,7 +236,7 @@ const Sidebar = ({ className, style }) => {
                 ],
               },
               {
-                name: `Feedback (version ${versionTag})`,
+                name: `Feedback (via Slack)`,
                 url: `https://postechdblab.slack.com/archives/C01L8EDHLJV`,
                 key: KEY_FEEDBACK,
                 icon: 'Feedback',
