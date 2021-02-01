@@ -66,6 +66,7 @@ const config = (env, argv) => ({
     userView: './src/app/user/fabric/user-view.jsx',
     batchRegister: './src/app/user/fabric/batch-register.jsx',
     dashboard: './src/app/dashboard/dashboard.component.js',
+    documentation: './src/app/documentation/documentation.component.js',
     submit: './src/app/job-submission/job-submission.jsx',
     submit_v1: './src/app/job/job-submit-v1/job-submit.component.js',
     jobList: './src/app/job/job-view/fabric/job-list.jsx',
@@ -319,6 +320,10 @@ const config = (env, argv) => ({
     generateHtml({
       filename: 'dashboard.html',
       chunks: ['layout', 'dashboard'],
+    }),
+    generateHtml({
+      filename: 'documentation.html',
+      chunks: ['layout', 'documentation'],
     }),
     generateHtml({
       filename: 'submit.html',

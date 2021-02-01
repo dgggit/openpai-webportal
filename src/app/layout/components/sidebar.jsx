@@ -18,7 +18,7 @@ const KEY_SUBMIT_JOB = 'SUBMITJOB';
 const KEY_JOBS = 'JOBS';
 const KEY_VC = 'VC';
 const KEY_FEEDBACK = 'FEEDBACK';
-// admin menu
+const KEY_DOCUMENTATION = 'DOCUMENTATION';
 const KEY_ADMIN = 'ADMIN_MENU';
 const KEY_ADMIN_PREFIX = 'ADMIN:';
 const KEY_DASHBOARD = 'DASHBOARD';
@@ -241,6 +241,13 @@ const Sidebar = ({ className, style }) => {
                 key: KEY_FEEDBACK,
                 icon: 'Feedback',
                 target: '_blank',
+              },
+              {
+                name: 'Documentation',
+                url: '/documentation.html',
+                key: KEY_DOCUMENTATION,
+                icon: 'Documentation',
+                 
               },
               {
                 name: 'Plugins',

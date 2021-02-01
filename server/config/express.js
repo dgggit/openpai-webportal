@@ -27,6 +27,8 @@ const favicon = require('serve-favicon');
 const config = require('./index');
 const logger = require('./logger');
 
+
+
 const app = express();
 
 app.use(compress());
@@ -42,6 +44,12 @@ app.use(favicon(path.join(appRoot.path, 'dist', 'favicon.ico')));
 
 // setup the root path
 const oneMonth = 3600 * 24 * 30 * 1000;
+
+
+app.all('/*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+});
 
 app.use(
   '/assets',
@@ -72,6 +80,8 @@ app.use((err, req, res, next) => {
     error: config.env === 'development' ? err.stack : {},
   });
 });
+
+
 
 // module exports
 module.exports = app;

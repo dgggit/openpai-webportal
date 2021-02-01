@@ -59,6 +59,8 @@ import StatusBadge from '../../../../../components/status-badge';
 import { getDurationString } from '../../../../../components/util/job';
 import CopyButton from '../../../../../components/copy-button';
 
+import { SOMMELIER_MASTER_INTERNAL_IP, SOMMELIER_MASTER_EXTERNAL_IP, SOMMELIER_IPMAP }  from '../../../../../sommelier-constants-react'
+
 const params = new URLSearchParams(window.location.search);
 const userName = params.get('username');
 const jobName = params.get('jobName');
@@ -606,7 +608,7 @@ export default class TaskRoleContainerList extends React.Component {
       },
       {
         key: 'ip',
-        name: 'IP',
+        name: 'Internal IP',
         className: FontClassNames.mediumPlus,
         headerClassName: FontClassNames.medium,
         minWidth: 90,
@@ -634,6 +636,36 @@ export default class TaskRoleContainerList extends React.Component {
           );
         },
       },
+      {
+                key: 'ip_ext',
+                        name: 'External IP',
+                                className: FontClassNames.mediumPlus,
+                                        headerClassName: FontClassNames.medium,
+                                                minWidth: 90,
+                                                        maxWidth: 140,
+                                                                isResizable: true,
+                                                                        fieldName: 'containerIp_ext',
+                                                                                onRender: item => {
+                                                                                            const ip = SOMMELIER_IPMAP[item.containerIp];
+                                                                                                      return (
+                                                                                                                  !isNil(ip) && (
+                                                                                                                                <div>
+                                                                                                                                                <TooltipHost
+                                                                                                                                                                  calloutProps={{
+                                                                                                                                                                                        isBeakVisible: false,
+                                                                                                                                                                                                          }}
+                                                                                                                                                                                                                            tooltipProps={{
+                                                                                                                                                                                                                                                  onRenderContent: () => <IPTooltipContent ip={ip} />,
+                                                                                                                                                                                                                                                                    }}
+                                                                                                                                                                                                                                                                                      directionalHint={DirectionalHint.topLeftEdge}
+                                                                                                                                                                                                                                                                                                      >
+                                                                                                                                                                                                                                                                                                                        <div>{ip}</div>
+                                                                                                                                                                                                                                                                                                                                        </TooltipHost>
+                                                                                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                                                                                                  )
+                                                                                                                            );
+                                                                                                              },
+                                                                                                                    },
       {
         key: 'ports',
         name: 'Ports',
@@ -696,7 +728,7 @@ export default class TaskRoleContainerList extends React.Component {
                   this.showSshInfo(
                     item.containerId,
                     item.containerPorts,
-                    item.containerIp,
+                    SOMMELIER_IPMAP[item.containerIp],
                   );
                 }}
                 disabled={
