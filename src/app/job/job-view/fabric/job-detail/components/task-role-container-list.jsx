@@ -671,7 +671,7 @@ export default class TaskRoleContainerList extends React.Component {
         name: 'Ports',
         className: FontClassNames.mediumPlus,
         headerClassName: FontClassNames.medium,
-        minWidth: 150,
+        minWidth: 200,
         maxWidth: 300,
         isResizable: true,
         onRender: item => {

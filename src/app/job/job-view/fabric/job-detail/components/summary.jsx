@@ -44,7 +44,7 @@ import t from '../../../../../components/tachyons.scss';
 import Card from './card';
 import Context from './context';
 import Timer from './timer';
-import { getTensorBoardUrl, getJobMetricsUrl } from '../conn';
+import { getTensorBoardUrl, getJobMetricsUrl, getJupyterUrl } from '../conn';
 import { printDateTime, isJobV2 } from '../util';
 import StatusBadge from '../../../../../components/status-badge';
 import {
@@ -57,6 +57,8 @@ import config from '../../../../../config/webportal.config';
 import StopJobConfirm from '../../JobList/StopJobConfirm';
 import CopyButton from '../../../../../components/copy-button';
 import CloneButton from './clone-button';
+
+import { SOMMELIER_MASTER_INTERNAL_IP, SOMMELIER_MASTER_EXTERNAL_IP, SOMMELIER_IPMAP }  from '../../../../../sommelier-constants-react'
 
 const HintItem = ({ header, children }) => (
   <div className={c(t.flex, t.justifyStart)}>
@@ -186,6 +188,38 @@ export default class Summary extends React.Component {
     }
 
     return result;
+  }
+
+  getSommelierTensorBoardUrl(jobInfo, rawJobConfig) {
+    const internalUrl = getTensorBoardUrl(jobInfo, rawJobConfig);
+    if( isNil(internalUrl) ) {
+      return Nil; 
+    }
+    const ipRegex = "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}";
+    const internalIp = internalUrl.match(ipRegex);
+    const externalIp =  SOMMELIER_IPMAP[internalIp];
+  
+    const port = internalUrl.split(':')[2];
+
+    const externalUrl = `http://${externalIp}:${port}`;
+    return externalUrl;
+
+  }
+
+  getSommelierJupyterUrl(jobInfo, rawJobConfig) {
+    const internalUrl = getJupyterUrl(jobInfo, rawJobConfig);
+    if( isNil(internalUrl) ) {
+      return Nil;
+    }
+        const ipRegex = "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}";
+            const internalIp = internalUrl.match(ipRegex);
+                const externalIp =  SOMMELIER_IPMAP[internalIp];
+
+          const port = internalUrl.split(':')[2];
+
+              const externalUrl = `http://${externalIp}:${port}`;
+
+                                return externalUrl;
   }
 
   renderHintMessage() {
@@ -435,15 +469,27 @@ export default class Summary extends React.Component {
               >
                 Go to Job Event Page
               </Link>
-              {!isNil(getTensorBoardUrl(jobInfo, rawJobConfig)) && (
+              {!isNil( getTensorBoardUrl(jobInfo, rawJobConfig) ) && (
                 <div className={c(t.flex)}>
                   <div className={c(t.bl, t.mh3)}></div>
                   <Link
                     styles={{ root: [FontClassNames.mediumPlus] }}
-                    href={getTensorBoardUrl(jobInfo, rawJobConfig)}
+                    href={ this.getSommelierTensorBoardUrl(jobInfo, rawJobConfig)  }
                     target='_blank'
                   >
                     Go to TensorBoard Page
+                  </Link>
+                </div>
+              )}
+              {!isNil( getJupyterUrl(jobInfo, rawJobConfig) ) && (
+                <div className={c(t.flex)}>
+                  <div className={c(t.bl, t.mh3)}></div>
+                  <Link
+                    styles={{ root: [FontClassNames.mediumPlus] }}
+                    href={ this.getSommelierJupyterUrl(jobInfo, rawJobConfig)  }
+                    target='_blank'
+                  >
+                   Go to JupyterLab Page
                   </Link>
                 </div>
               )}

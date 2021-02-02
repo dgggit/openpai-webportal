@@ -136,6 +136,27 @@ export function getTensorBoardUrl(jobInfo, rawJobConfig) {
   return `http://${ip}:${port}`;
 }
 
+export function getJupyterUrl(jobInfo, rawJobConfig) {
+
+    let port = null;
+      let ip = null;
+ 
+    const taskRoles = jobInfo.taskRoles;
+    const firstTaskRoleName = Object.keys(taskRoles)[0];
+    const taskStatuses = taskRoles[firstTaskRoleName].taskStatuses[0];
+
+    if (taskStatuses.taskState === 'RUNNING') {
+        port = taskStatuses['containerPorts']['jupyter'];
+        ip = taskStatuses.containerIp;
+    }
+    
+    if (isNil(port) || isNil(ip)) {
+         return null;
+    }
+    return `http://${ip}:${port}`;
+
+}
+
 export function getJobMetricsUrl(jobInfo) {
   const from = jobInfo.jobStatus.createdTime;
   let to = '';

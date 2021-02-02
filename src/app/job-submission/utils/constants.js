@@ -111,13 +111,15 @@ export const PROTOCOL_TOOLTIPS = {
 
 
 export const COMMAND_PLACEHOLDER = 
-`# To enable JupyterLab : Add 1 port named 'jupyter' by clicking Advanced > Ports > Add.
+`# To enable JupyterLab : Add 1 port named 'jupyter' by clicking Advanced > Ports > Add. Then, add 'start-jupyter' at your command.
+
+# To enable MySQL server : Add 'start-mysql' at your command.
 
 # To enable SSH / Tensorboard : go to 'Tools' tab and activate.
 
 # To run with DEBUG mode : add 'sleep infinity' at the very end of your command.
 
-# (note) All lines will be concatenated by "&&". So do not use characters like "#", "\\" in your command`;
+# (note) All lines will be concatenated by "&&". So do not use characters like "#", "\\" in your command. Also, the commands above not might work depending on the image you use.`;
 
 
 export const DOCKER_OPTIONS = [
