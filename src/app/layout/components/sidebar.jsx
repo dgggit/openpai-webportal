@@ -22,9 +22,9 @@ const KEY_DOCUMENTATION = 'DOCUMENTATION';
 const KEY_ADMIN = 'ADMIN_MENU';
 const KEY_ADMIN_PREFIX = 'ADMIN:';
 const KEY_DASHBOARD = 'DASHBOARD';
-const KEY_SERVICES = 'SERVICES';
 const KEY_HARDWARE = 'HARDWARE';
 // admin menu items
+const KEY_SERVICES = KEY_ADMIN_PREFIX + 'SERVICES';
 const KEY_K8S_DASHBOARD = KEY_ADMIN_PREFIX + 'K8S_DASHBOARD';
 const KEY_USER_MANAGEMENT = KEY_ADMIN_PREFIX + 'USER_MANAGEMENT';
 // plugin menu
@@ -195,12 +195,6 @@ const Sidebar = ({ className, style }) => {
 		key: KEY_DASHBOARD
 	      },
 	      {
-	        name: 'Services',
-	        url: '/cluster-view/services.html',
-	        icon: 'MapLayers',
-	        key: KEY_SERVICES,
-	      },
-	      {
 		name: 'Hardware',
 		url: '/cluster-view/hardware.html',
 		icon: 'HardDriveGroup',
@@ -217,6 +211,12 @@ const Sidebar = ({ className, style }) => {
                   display: isAdmin ? undefined : 'none',
                 },
                 links: [
+                        {
+                                    name: 'Services',
+                                              url: '/cluster-view/services.html',
+                                                        icon: 'MapLayers',
+                                                                  key: KEY_SERVICES,
+                                                                          },
                   {
                     name: 'K8s Dashboard',
                     url: '/cluster-view/k8s.html',

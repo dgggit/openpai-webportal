@@ -109,9 +109,16 @@ export const PROTOCOL_TOOLTIPS = {
     'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#job-exit-spec-retry-policy-and-completion-policy',
 };
 
-export const COMMAND_PLACEHOLDER = `'You could define your own Parameters, Secrets or Data mount point on the right sidebar.
 
-All lines will be concatenated by "&&". So do not use characters like "#", "\\" in your command'`;
+export const COMMAND_PLACEHOLDER = 
+`# To enable JupyterLab : Add 1 port named 'jupyter' by clicking Advanced > Ports > Add.
+
+# To enable SSH / Tensorboard : go to 'Tools' tab and activate.
+
+# To run with DEBUG mode : add 'sleep infinity' at the very end of your command.
+
+# (note) All lines will be concatenated by "&&". So do not use characters like "#", "\\" in your command`;
+
 
 export const DOCKER_OPTIONS = [
   {
