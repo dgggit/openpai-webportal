@@ -48,7 +48,7 @@ export const ToolComponent = React.memo(
               Tools section is used to configure the tools that are useful for
               jobs.
             </Hint>
-            <TensorBoard extras={extras} onChange={onExtrasChange} />
+	      {/*    <TensorBoard extras={extras} onChange={onExtrasChange} /> */}
             <JobSSH extras={extras} onExtrasChange={onExtrasChange} />
           </Stack>
         </SidebarCard>
