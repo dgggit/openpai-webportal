@@ -41,13 +41,13 @@ const Jumbotron = ({ showLoginModal }) => (
             className={c(FontClassNames.mediumPlus, t.tc, t.lhCopy, t.mv4)}
             style={{ maxWidth: '20rem' }}
           >
-            Platform for AI is an open source platform that provides complete AI
+            Sommelier is an open source platform that provides complete AI
             model training and resource management capabilities, it is easy to
             extend and supports on-premise, cloud and hybrid environments in
             various scale.
           </div>
           <PrimaryButton
-            styles={{ background: '#812a6a',  root: { maxWidth: '6rem' } }}
+            styles={{ backgroundColor: '#812a6a',  root: { maxWidth: '6rem', backgroundColor: '#812a6a', '&:hover' : {backgroundColor: '#812a6a'} } }}
             text='Sign in'
             onClick={showLoginModal}
           />
@@ -66,13 +66,13 @@ const Jumbotron = ({ showLoginModal }) => (
         >
           <div className={c(FontClassNames.superLarge)}>Sommelier</div>
           <div className={c(FontClassNames.mediumPlus, t.lhCopy, t.mv4)}>
-            Platform for AI is an open source platform that provides complete AI
+            Sommelier is an open source platform that provides complete AI
             model training and resource management capabilities, it is easy to
             extend and supports on-premise, cloud and hybrid environments in
             various scale.
           </div>
           <PrimaryButton
-            styles={{ background: '#812a6a',  root: { maxWidth: '6rem' } }}
+            styles={{ backgroundColor: '#812a6a',  root: { maxWidth: '6rem', backgroundColor: '#812a6a', '&:hover': {backgroundColor: '#812a6a'}  } }}
             text='Sign in'
             onClick={showLoginModal}
           />

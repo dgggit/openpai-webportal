@@ -134,8 +134,9 @@ const Index = () => {
           t.flex,
           t.justifyBetween,
         )}
+        style={{ background: '#812a6a'}}
       >
-        <div className={c(FontClassNames.large, t.white)}>Sommelier @ POSTECH Database Lab</div>
+        <div className={c(FontClassNames.large, t.white)}  >Sommelier @ POSTECH Database Lab</div>
         <div
           className={c(FontClassNames.large, t.white, t.dim, t.pointer)}
           onClick={showLoginModal}
