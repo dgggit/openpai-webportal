@@ -124,58 +124,13 @@ export const COMMAND_PLACEHOLDER =
 
 export const DOCKER_OPTIONS = [
   {
-    key: 'python_3.6-pytorch_1.4.0-gpu',
-    text: 'PyTorch 1.4.0 + Python 3.6 with GPU, CUDA 10.1',
-    image: 'openpai/standard:python_3.6-pytorch_1.4.0-gpu',
-  },
-  {
-    key: 'python_3.6-pytorch_1.2.0-gpu',
-    text: 'PyTorch 1.2.0 + Python 3.6 with GPU, CUDA 10.0',
-    image: 'openpai/standard:python_3.6-pytorch_1.2.0-gpu',
-  },
-  {
-    key: 'python_3.6-tensorflow_2.1.0-gpu',
-    text: 'TensorFlow 2.1.0 + Python 3.6 with GPU, CUDA 10.1',
-    image: 'openpai/standard:python_3.6-tensorflow_2.1.0-gpu',
-  },
-  {
-    key: 'python_3.6-tensorflow_1.15.0-gpu',
-    text: 'TensorFlow 1.15.0 + Python 3.6 with GPU, CUDA 10.0',
-    image: 'openpai/standard:python_3.6-tensorflow_1.15.0-gpu',
-  },
-  {
-    key: 'python_3.6-mxnet_1.5.1-gpu',
-    text: 'MXNet 1.5.1 + Python 3.6 with GPU, CUDA 10.1',
-    image: 'openpai/standard:python_3.6-mxnet_1.5.1-gpu',
-  },
-  {
-    key: 'python_3.6-cntk_2.7-gpu',
-    text: 'CNTK 2.7 + Python 3.6 with GPU, CUDA 10.1',
-    image: 'openpai/standard:python_3.6-cntk_2.7-gpu',
-  },
-  {
-    key: 'python_3.6-pytorch_1.4.0-cpu',
-    text: 'PyTorch 1.4.0 + Python 3.6 with CPU',
-    image: 'openpai/standard:python_3.6-pytorch_1.4.0-cpu',
-  },
-  {
-    key: 'python_3.6-pytorch_1.2.0-cpu',
-    text: 'PyTorch 1.2.0 + Python 3.6 with CPU',
-    image: 'openpai/standard:python_3.6-pytorch_1.2.0-cpu',
-  },
-  {
-    key: 'python_3.6-tensorflow_2.1.0-cpu',
-    text: 'TensorFlow 2.1.0 + Python 3.6 with CPU',
-    image: 'openpai/standard:python_3.6-tensorflow_2.1.0-cpu',
-  },
-  {
-    key: 'python_3.6-tensorflow_1.15.0-cpu',
-    text: 'TensorFlow 1.15.0 + Python 3.6 with CPU',
-    image: 'openpai/standard:python_3.6-tensorflow_1.15.0-cpu',
+    key: 'postechdblab/sommelier:cuda10.1-py36-torch1.3.1-db',
+    text: 'postechdblab/sommelier:cuda10.1-py36-torch1.3.1-db',
+    image: 'postechdblab/sommelier:cuda10.1-py36-torch1.3.1-db'
   },
 ];
 export const DEFAULT_DOCKER_URI =
-  'openpai/standard:python_3.6-pytorch_1.2.0-gpu';
+  'postechdblab/sommelier:cuda10.1-py36-torch1.3.1-db';
 // For PAI runtime only
 export const PAI_PLUGIN = 'com.microsoft.pai.runtimeplugin';
 
